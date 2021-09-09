@@ -29,30 +29,35 @@ def set_fase(value):
     module_fase = value
 
 # title material modules
-global modules
-modules = {
+global math_modules
+math_modules = {
 'geometria': 
-['Identificar a localização/movimentação de objeto em mapas, croquis e outras representações gráficas.', 
+['Olá, bem vindo ao modulo de GEOMETRIA! 1/4',
+'Identificar a localização/movimentação de objeto em mapas, croquis e outras representações gráficas. \n\n https://www.youtube.com/watch?v=7XywV0wzY6I', 
+'| https://www.ime.usp.br/~thiagoap/emancipa104/apostila_resumao_geometria.pdf',
 'Identificar propriedades comuns e diferenças entre figuras bidimensionais e tridimensionais, relacionando-as com as suas planificações.',
 'Identificar propriedades de triângulos pela comparação de medidas de lados e ângulos.',
 'Resolver problema utilizando relações métricas no triângulo retângulo. + exercício'],
 'grandezas e medidas': 
-['Resolver problema envolvendo perímetro de figuras planas.',
+['Olá, bem vindo ao modulo de Grandezas e Medidas! 2/4',
+'Resolver problema envolvendo perímetro de figuras planas.',
 'Resolver problema envolvendo área de figuras planas.',
 'Resolver problema envolvendo a área total e/ou volume de um sólido (prisma, pirâmide, cilindro, cone, esfera)'],
 'números e operações, álgebra e funções':
-['Identificar a localização de números inteiros na reta numérica.',
+['Olá, bem vindo ao modulo de Números e Operações, Álgebra e Funções! 3/4',
+'Identificar a localização de números inteiros na reta numérica.',
 'Efetuar cálculos com números inteiros, envolvendo as operações (adição, subtração, multiplicação, divisão, potenciação).',
 'Resolver problemas utilizando frações equivalentes.',
 'Identificar uma equação ou inequação do 1º grau que expressa um problema.'],
 'estatística, probabilidade e combinatória': 
-['Resolver problema envolvendo probabilidade de um evento.',
+['Olá, bem vindo ao modulo de Estatística, Probabilidade e Combinatória! 4/4',
+'Resolver problema envolvendo probabilidade de um evento.',
 'Resolver problema envolvendo informações apresentadas em tabelas e/ou gráficos.']
 }
 
-def get_module(value : str, index):
-    return modules[value][index]
+def get_math_module(value : str, index):
+    return math_modules[value][index]
 
-def length_module(value : str): 
-    return len(modules[value])
+def length_math_module(value : str): 
+    return len(math_modules[value])
 

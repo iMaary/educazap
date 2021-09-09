@@ -11,4 +11,5 @@ def separate_messages(file_name):
     file.close()
     return flow 
 
+
 # print(separate_messages('messages.csv'))
