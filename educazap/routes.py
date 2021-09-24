@@ -9,15 +9,20 @@ from global_variables import *
 def bot():
     resp = MessagingResponse()
     msg = resp.message()
-    module_name = ''
-    check_math = False
-    text = ''
-    incoming_msg = request.values.get('Body', '').lower()
     flow = separate_messages('C:/Users/Aluno/cordel-bot/whatsapp-bot/educazap/messages.csv')
-    if "*" in flow[get_count()][0]:
-        module_name = flow[get_count()][0].replace('*', '').lower()
+    incoming_msg = request.values.get('Body', '').lower()
+    module_name = ''
+    text = ''
+    temp_count = 0
 
-        text = get_math_module(module_name, get_fase())
+    if "*" in flow[get_count()][0]:
+        for i in math_modules:
+            module_name = i
+            temp_count += 1
+            if temp_count > get_item():
+                break
+
+        text = get_math_module(module_name, get_fase(), 0)
         if "|" in text:
             try: 
                 msg.media(text.replace("|", "").strip())
@@ -28,9 +33,17 @@ def bot():
 
         if get_fase() < length_math_module(module_name) - 1:
             plus_fase(1)
-        else:
+
+        elif get_item() < len(math_modules) - 1:
+            plus_item(1)
             set_fase(0)
-            plus_count(1)
+            
+        else:
+            set_item(0)
+            set_fase(0)
+            # set_item(0)
+            # plus_count(1)
+
     elif get_count() < len(flow[get_count()]):
         for i in range(len(flow[get_count()])):
             text += flow[get_count()][i] + " \n\n"
