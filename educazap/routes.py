@@ -60,10 +60,10 @@ def bot():
             # plus_count(1)
 
     elif get_count() < len(flow[get_count()]):
-
+    
         for i in range(len(flow[get_count()])):
             text += flow[get_count()][i] + " \n\n"
-            
+
         if get_count() == 1 and get_level() == None:
             if '1' in incoming_msg or '9 ano' in incoming_msg:
                 set_level(0)
@@ -76,10 +76,12 @@ def bot():
             if 'matemática' in incoming_msg or 'matematica' in incoming_msg:
                 set_subject('matematica')
                 plus_count(1)
+                text = 'Dê um *ok*, para confirmar a disciplina de Matemática!'
             elif 'portugues' in incoming_msg or 'português' in incoming_msg:
                 set_subject('portugues')
                 plus_count(1) 
-            else:
+                text = 'Dê um *ok*, para confirmar a disciplina de Português!'
+            else: 
                 text = '\n\nDesculpe, não entendi sua resposta. Por favor, tente novamente\n\n'
         
         else: 
