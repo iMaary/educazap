@@ -43,6 +43,28 @@ def set_item(value):
     global module_item
     module_item = value
 
+# subject is a status to choose the material
+global subject
+subject = None
+
+def get_subject(): 
+    return subject
+
+def set_subject(value): 
+    global subject
+    subject = value
+
+# subject is a status to choose the material
+global school_level
+school_level = None
+
+def get_level(): 
+    return school_level
+
+def set_level(value): 
+    global school_level
+    school_level = value
+
 # title material modules
 global math_modules
 math_modules = {
@@ -80,7 +102,7 @@ math_modules = {
 ['Resolver problemas envolvendo probabilidade de um evento.',
 'Resolver problemas envolvendo probabilidade de um evento.'],
 ['Resolver problemas envolvendo informações apresentadas em tabelas e/ou gráficos.',
-'Resolver problemas envolvendo informações apresentadas em tabelas e/ou gráficos.'],
+'Resolver problemas envolvendo informações apresentadas em tabelas e/ou gráficos.']
 ]
 }
 
@@ -91,15 +113,15 @@ def length_math_module(value : str):
     return len(math_modules[value])
 
 global portuguese_modules
-port_modules = {
+portuguese_modules = {
 'práticas de leitura':
-[
+[ 
 ['Identificar o tema central de um texto.',
 'Localizar informação explícita em um texto.'],
 ['Localizar informação explícita em um texto.',
 'Inferir o sentido de uma palavra ou expressão.'],
 ['Distinguir fato de opinião relativa a fato.',
-'(AULA 3)'],
+'(AULA 3)']
 ],
 'Implicações do suporte, do gênero e/ou do enunciador na compreensão do texto':
 [
@@ -108,7 +130,7 @@ port_modules = {
 ['(AULA 2)',
 '(AULA 2)'],
 ['(AULA 3)',
-'(AULA 3)'],
+'(AULA 3)']
 ],
 'relações entre textos':
 [
@@ -117,7 +139,7 @@ port_modules = {
 ['(AULA 2)',
 '(AULA 2)'],
 ['(AULA 3)',
-'(AULA 3)'],
+'(AULA 3)']
 ],
 'coesão e coerência':
 [
@@ -135,12 +157,12 @@ port_modules = {
 ['Identificar efeitos de sentido decorrente do uso de pontuação e outras notações',
 'Identificar efeitos de sentido decorrente do uso de pontuação e outras notações.'],
 ['(AULA 2)',
-'Reconhecer o efeito de sentido decorrente do emprego de recursos estilísticos e morfossintáticos.'],
-],
+'Reconhecer o efeito de sentido decorrente do emprego de recursos estilísticos e morfossintáticos.']
+]
 } 
 
-def get_portuguese_module(value : str, index):
-    return math_modules[value][index]
+def get_portuguese_module(value : str, i, j):
+    return portuguese_modules[value][i][j]
 
 def length_portuguese_module(value : str): 
-    return len(math_modules[value])
+    return len(portuguese_modules[value])
