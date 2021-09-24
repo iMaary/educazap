@@ -38,11 +38,21 @@ def bot():
             size_module = length_portuguese_module(module_name)
             text = get_portuguese_module(module_name, get_fase(), get_level())
 
+        text = text.replace('.', '')
+        text = f'''Módulo {get_count()+1}: {module_name.upper()} AULA {get_fase()+1}/{size_module} 📐🚀                                                                    
+                        \nÓtimo, nessa aula você vai descobrir como "{text}", assista sua aula em: https://youtu.be/hsD4cwAoaW8
+
+                        \nQuando concluir a aula, mande um OK                                                               
+                        \nNão esqueça de:                                                                                        
+                        \n- Fazer exercícios.                                                                     
+                        \n- Estudar os conteúdos.'''
+
         if "|" in text:
             try: 
                 msg.media(text.replace("|", "").strip())
             except:
                 msg.body(text)
+
         else:
             msg.body(text)
 
@@ -56,8 +66,6 @@ def bot():
         else:
             set_item(0)
             set_fase(0)
-            # set_item(0)
-            # plus_count(1)
 
     elif get_count() < len(flow[get_count()]):
     
@@ -71,7 +79,6 @@ def bot():
                 set_level(1)
             else:
                 text = '\n\nDesculpe, não entendi sua resposta. Por favor, tente novamente\n\n'
-        
         elif get_count() == 1:
             if 'matemática' in incoming_msg or 'matematica' in incoming_msg:
                 set_subject('matematica')
@@ -82,8 +89,7 @@ def bot():
                 plus_count(1) 
                 text = 'Dê um *ok*, para confirmar a disciplina de Português!'
             else: 
-                text = '\n\nDesculpe, não entendi sua resposta. Por favor, tente novamente\n\n'
-        
+                text = '\n\nDesculpe, não entendi sua resposta. Por favor, tente novamente\n\n' 
         else: 
             plus_count(1) 
         
