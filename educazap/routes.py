@@ -1,3 +1,4 @@
+from os import link
 from bot import app
 from flask import request
 import requests
@@ -38,14 +39,15 @@ def bot():
             size_module = length_portuguese_module(module_name)
             text = get_portuguese_module(module_name, get_fase(), get_level())
 
+        complete_text = text.split('$')
+        print(complete_text)
+        class_link = complete_text[1]
+        text = complete_text[0]
         text = text.replace('.', '')
-        text = f'''Módulo {get_count()+1}: {module_name.upper()} AULA {get_fase()+1}/{size_module} 📐🚀                                                                    
-                        \nÓtimo, nessa aula você vai descobrir como "{text}", assista sua aula em: https://youtu.be/hsD4cwAoaW8
-
-                        \nQuando concluir a aula, mande um OK                                                               
-                        \nNão esqueça de:                                                                                        
-                        \n- Fazer exercícios.                                                                     
-                        \n- Estudar os conteúdos.'''
+        text = f'''Módulo {get_item()+1}: {module_name.upper()} - AULA {get_fase()+1}/{size_module} 📐🚀                                                                    
+                        \nÓtimo, nessa aula você vai descobrir como _*"{text}"*_, assista sua aula em: {class_link}
+                        \nQuando concluir a aula, mande um *OK*                                                               
+                        \nNão esqueça de:\n- Fazer exercícios.\n- Estudar os conteúdos.'''
 
         if "|" in text:
             try: 
@@ -73,9 +75,9 @@ def bot():
             text += flow[get_count()][i] + " \n\n"
 
         if get_count() == 1 and get_level() == None:
-            if '1' in incoming_msg or '9 ano' in incoming_msg:
+            if '1' in incoming_msg or '9' in incoming_msg:
                 set_level(0)
-            elif '2' in incoming_msg or '3 ano' in incoming_msg:
+            elif '2' in incoming_msg or '3' in incoming_msg:
                 set_level(1)
             else:
                 text = '\n\nDesculpe, não entendi sua resposta. Por favor, tente novamente\n\n'
