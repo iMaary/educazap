@@ -166,3 +166,35 @@ def get_portuguese_module(value : str, i, j):
 
 def length_portuguese_module(value : str): 
     return len(portuguese_modules[value])
+
+
+class_challenge = {
+"coesao e coerencia":
+"https://raw.githubusercontent.com/iMaary/educazap/chatbot-twilio/educazap/static/Coes%C3%A3o%20e%20Coer%C3%AAncia.png?token=AKZWNKQPNUDJSVI6Z5GZEPDBNGQZ6",
+"compreensao do texto":
+"https://raw.githubusercontent.com/iMaary/educazap/chatbot-twilio/educazap/static/Compreens%C3%A3o%20do%20texto.png?token=AKZWNKRBWM4GL6J4K4CUAJDBNGQ4K",
+"estatistica, probabilidade e combinatoria":
+"https://raw.githubusercontent.com/iMaary/educazap/chatbot-twilio/educazap/static/Estat%C3%ADstica%2C%20probabilidade%20e%20combinat%C3%B3ria.png?token=AKZWNKTCL3ITJXHX4AGVMATBNGRAU",
+"grandezas e medidas":
+"https://raw.githubusercontent.com/iMaary/educazap/chatbot-twilio/educazap/static/Grandezas%20e%20Medidas%20EF.png?token=AKZWNKSQ2GRBHJAD6ZG4QTLBNGRFI",
+"numeros, algebra e funcoes":
+"https://raw.githubusercontent.com/iMaary/educazap/chatbot-twilio/educazap/static/N%C3%BAmeros%2C%20%C3%A1lgebra%20e%20fun%C3%A7%C3%B5es.png?token=AKZWNKTHIXX6DLMM7UBJJXLBNGRHU",
+"praticas de leitura":
+"https://raw.githubusercontent.com/iMaary/educazap/chatbot-twilio/educazap/static/Pr%C3%A1ticas%20de%20leitura.png?token=AKZWNKUIZVLKMBHBEMS6TETBNGRNU",
+"relacoes entre textos":
+"https://raw.githubusercontent.com/iMaary/educazap/chatbot-twilio/educazap/static/Rela%C3%B5es%20emtre%20textos%20do%20texto.png?token=AKZWNKUA4A5ST6XBMGDMP5TBNGRRE",
+"variacao linguistica":
+"https://raw.githubusercontent.com/iMaary/educazap/chatbot-twilio/educazap/static/Varia%C3%A7%C3%A3o%20Lingu%C3%ADstica.png?token=AKZWNKX2KFOXYIY2C65UVS3BNGRYE",
+"geometria":
+"https://raw.githubusercontent.com/iMaary/educazap/chatbot-twilio/educazap/static/_Geometria%20EF.png?token=AKZWNKRP5GXCMPI77X3IRA3BNGR26"
+}
+
+global menu_class_challenge
+menu_class_challenge = False
+
+def invert_menu():
+    global menu_class_challenge
+    menu_class_challenge = not menu_class_challenge
+
+def consult_menu():
+    return menu_class_challenge

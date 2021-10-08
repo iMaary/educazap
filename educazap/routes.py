@@ -18,7 +18,49 @@ def bot():
     current_module = None
     size_module = None
   
-    if "*" in flow[get_count()][0]:
+    if "desafio na aula" in incoming_msg or consult_menu():
+        #implements
+        invert_menu()
+        if consult_menu():
+            text_menu = '''
+                            *Escolha o tema*
+                            \n1 - Geometria\n2 - Estatística, probabilidade e combinatória\n3 - Grandezas e Medidas\n4 - Números, algebra e funções
+                            \n5 - Coesão e Coerência\n6 - Compreensão do texto\n7 - Práticas de leitura\n8 - Relações entre textos\n9 - Variação Linguística          
+                        '''
+            msg.body(text_menu)
+        else:
+            current_challenge_name = ''
+            if "geometria" in incoming_msg:
+                msg.media(class_challenge["geometria"])
+                current_challenge_name = 'Geometria'
+            elif "coesao e coerencia" in incoming_msg or "coesão e coerência" in incoming_msg:
+                msg.media(class_challenge["coesao e coerencia"])
+                current_challenge_name = 'Coesão e Coerência'
+            elif "compreensao do texto" in incoming_msg or "compreesão do texto" in incoming_msg:
+                msg.media(class_challenge["compreensao do texto"])
+                current_challenge_name = 'Compreensão do texto'
+            elif "probabilidade" in incoming_msg or "combinatoria" in incoming_msg or "estatistica" in incoming_msg:
+                msg.media(class_challenge["estatistica, probabilidade e combinatoria"])
+                current_challenge_name = 'Estatística, probabilidade e combinatória'
+            elif "grandezas e medidas" in incoming_msg:
+                msg.media(class_challenge["gradezas e medidas"])
+                current_challenge_name = 'Grandezas e Medidas'
+            elif "algebra e funções" in incoming_msg or "algebra e funcoes" in incoming_msg:
+                msg.media(class_challenge["numeros, algebra e funcoes"])
+                current_challenge_name = 'Algebra e Funções'
+            elif "relacoes entre textos" in incoming_msg or "relações entre textos" in incoming_msg:
+                msg.media(class_challenge["relacoes entre textos"])
+                current_challenge_name = 'Relações entre textos'
+            elif "variacao linguistica" in incoming_msg or "variação linguística" in incoming_msg:
+                msg.media(class_challenge["variacao linguistica"])
+                current_challenge_name = 'Variação Linguística'
+            else:
+                msg.body("algo de errado não está certo!")
+            if current_challenge_name:
+                msg.body(f'Digite *"Concluído"* após finalizar a atividade!')
+            
+
+    elif "*" in flow[get_count()][0]:
         if get_subject() == 'matematica':
             current_module = math_modules
             for i in current_module:
@@ -49,6 +91,7 @@ def bot():
                         \nQuando concluir a aula, mande um *OK*                                                               
                         \nNão esqueça de:\n- Fazer exercícios.\n- Estudar os conteúdos.'''
 
+        # put here the files implements when it's done...
         if "|" in text:
             try: 
                 msg.media(text.replace("|", "").strip())
