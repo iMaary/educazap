@@ -18,7 +18,11 @@ def bot():
     current_module = None
     size_module = None
   
-    if "desafio na aula" in incoming_msg or consult_menu():
+    
+    if "dangerous lunaris" in incoming_msg or "jornada gamificada" in incoming_msg:
+        msg.body('dangerous lunaris aeee')
+
+    elif "desafio na aula" in incoming_msg or consult_menu():
         #implements
         invert_menu()
         if consult_menu():
