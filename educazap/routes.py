@@ -51,9 +51,9 @@ def bot():
                 return str(resp)
 
             if "matemática" in consult_lunari_subject() or "matemática" in consult_lunari_subject():
-                msg.body("Vamos nessa?!\n\nChegou a hora!!\n" + dangeons_lunari["matematica"][level])
+                msg.body(f'A aventura vai começar! Preparado(a)? 🥌 🚀 🎮\nEntre no link: {dangeons_lunari["matematica"][level]}! Que os jogos conhecem 🥅')
             elif "portugues" in consult_lunari_subject() or "português" in consult_lunari_subject():
-                msg.body("Vamos nessa?!\n\nChegou a hora!!\n" + dangeons_lunari["portugues"][level])
+                msg.body(f'A aventura vai começar! Preparado(a)? 🥌 🚀 🎮\nEntre no link: {dangeons_lunari["portugues"][level]}! Que os jogos conhecem 🥅')
 
             invert_lunari_verify()
             plus_lunari_count_img(-6)
