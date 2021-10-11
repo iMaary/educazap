@@ -198,3 +198,47 @@ def invert_menu():
 
 def consult_menu():
     return menu_class_challenge
+
+dangeons_lunari = {
+"matematica": 
+[
+"https://forms.gle/dzgULZnSZDJ67QZJ6",
+"https://forms.gle/ZKzzDEdW5hLqHaUf8"    
+],
+"portugues":
+[
+"https://forms.gle/Lhk4xk5GASQUJw7NA",
+"https://forms.gle/MwMGKUYY3fpPhCCB7"
+]
+}
+
+global menu_class_lunari
+menu_class_lunari = False
+
+def invert_lunari_verify():
+    global menu_class_lunari
+    menu_class_lunari = not menu_class_lunari
+
+def consult_lunari_verify():
+    return menu_class_lunari
+
+global count_lunari_images
+count_lunari_images = 0
+
+def plus_lunari_count_img(value):
+    global count_lunari_images
+    count_lunari_images += value
+
+def consult_lunari_count():
+    return count_lunari_images
+
+
+global current_subject_lunari
+current_subject_lunari = ''
+
+def define_lunari_subject(value):
+    global current_subject_lunari
+    current_subject_lunari = value
+
+def consult_lunari_subject():
+    return current_subject_lunari

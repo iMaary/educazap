@@ -19,8 +19,46 @@ def bot():
     size_module = None
   
     
-    if "dangerous lunaris" in incoming_msg or "jornada gamificada" in incoming_msg:
-        msg.body('dangerous lunaris aeee')
+    if "dl capítulo 1" in incoming_msg or "dl capitulo 1" in incoming_msg or consult_lunari_verify():
+        if consult_lunari_count() == 0: invert_lunari_verify()
+        plus_lunari_count_img(1)
+        if consult_lunari_count() == 1:
+            msg.media("https://raw.githubusercontent.com/iMaary/educazap/chatbot-twilio/educazap/static/DANGEONS_LUNARI/DL2.png?token=AKZWNKRRE3LJ6CTBG3XYKU3BNXWX4")
+            msg.body("Vamos entender as instruções antes de prosseguir?")
+        elif consult_lunari_count() == 2:
+            msg.media("https://raw.githubusercontent.com/iMaary/educazap/chatbot-twilio/educazap/static/DANGEONS_LUNARI/DL1.png?token=AKZWNKX255GO3OA6ZI3IBD3BNXWNS")
+            msg.body("Agora, você está preparado?")
+        elif consult_lunari_count() == 3:
+            msg.media("https://raw.githubusercontent.com/iMaary/educazap/chatbot-twilio/educazap/static/DANGEONS_LUNARI/DL3.png?token=AKZWNKTJUROMGZBWISYMEDDBNXW6E")
+            msg.body("Antes veja mais algumas informações interessantes!\n*Dê um _OK_ quando estiver concluído :)*")
+        elif consult_lunari_count() == 4:
+            msg.body("Chegou a hora de informar a matéria que você deseja!")
+        elif consult_lunari_count() == 5:
+            if not("matematica" in incoming_msg or "portugues" in incoming_msg or "matemática" in incoming_msg or "português" in incoming_msg):
+                plus_lunari_count_img(-1)
+                msg.body("Desculpe, não entendi!\n\n*OBS.:* essa resposta pode não estar de acordo com o solicitado...")
+                return str(resp)
+            define_lunari_subject(incoming_msg)
+            msg.body("Em que ano você está mesmo?")
+        else:
+            if "9º ano" in incoming_msg or "9" in incoming_msg:
+                level = 1
+            elif "3º ano" in incoming_msg or "3" in incoming_msg:
+                level = 2
+            else:
+                plus_lunari_count_img(-1)
+                msg.body("Desculpe, não entendi!\n\n*OBS.:* essa resposta pode não estar de acordo com o solicitado...")
+                return str(resp)
+
+            if "matemática" in consult_lunari_subject() or "matemática" in consult_lunari_subject():
+                msg.body("Vamos nessa?!\n\nChegou a hora!!\n" + dangeons_lunari["matematica"][level])
+            elif "portugues" in consult_lunari_subject() or "português" in consult_lunari_subject():
+                msg.body("Vamos nessa?!\n\nChegou a hora!!\n" + dangeons_lunari["portugues"][level])
+
+            invert_lunari_verify()
+            plus_lunari_count_img(-6)
+            define_lunari_subject('')
+
 
     elif "desafio na aula" in incoming_msg or consult_menu():
         #implements
