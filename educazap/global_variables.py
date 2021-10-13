@@ -121,42 +121,42 @@ portuguese_modules = {
 ['Localizar informação explícita em um texto. $ https://www.youtube.com/watch?v=PUzoSsOYVoM',
 'Inferir o sentido de uma palavra ou expressão. $ https://www.youtube.com/watch?v=m-Mr8sM5RwU'],
 ['Distinguir fato de opinião relativa a fato. $ https://www.youtube.com/watch?v=fdHA2rhDasU',
-'(AULA) $ https://AULA3.com']
+'<Descritor Indisponível> $ https://somoscordel.com.br']
 ],
 'Implicações do suporte, do gênero e/ou do enunciador na compreensão do texto':
 [
-['(AULA) $ https://AULA1.com',
-'(AULA) $ https://AULA1.com'],
-['(AULA) $ https://AULA2.com',
-'(AULA) $ https://AULA2.com'],
-['(AULA) $ https://AULA3.com',
-'(AULA) $ https://AULA3.com']
+['<Descritor Indisponível> $ https://somoscordel.com.br',
+'<Descritor Indisponível> $ https://somoscordel.com.br'],
+['<Descritor Indisponível> $ https://somoscordel.com.br',
+'<Descritor Indisponível> $ https://somoscordel.com.br'],
+['<Descritor Indisponível> $ https://somoscordel.com.br',
+'<Descritor Indisponível> $ https://somoscordel.com.br']
 ],
 'relações entre textos':
 [
 ['Reconhecer semelhanças e/ou diferenças de ideias e opiniões na comparação entre textos que tratem da mesma temática. $ https://www.youtube.com/watch?v=RxMfvyONZfg',
-'(AULA) $ https://AULA1.com'],
-['(AULA) $ https://AULA2.com',
-'(AULA) $ https://AULA2.com'],
-['(AULA) $ https://AULA3.com',
-'(AULA) $ https://AULA3.com']
+'<Descritor Indisponível> $ https://somoscordel.com.br'],
+['<Descritor Indisponível> $ https://somoscordel.com.br',
+'<Descritor Indisponível> $ https://somoscordel.com.br'],
+['<Descritor Indisponível> $ https://somoscordel.com.br',
+'<Descritor Indisponível> $ https://somoscordel.com.br']
 ],
 'coesão e coerência':
 [
 ['Reconhecer as relações entre partes de um texto, identificando os recursos coesivos que contribuem para sua continuidade. $ https://www.youtube.com/watch?v=O6L1a0LRVm0',
 'Diferenciar as partes principais das secundárias em um texto. $ https://www.youtube.com/watch?v=rUFthCR7NY4'],
 ['Diferenciar as partes principais das secundárias em um texto. $ https://www.youtube.com/watch?v=rUFthCR7NY4',
-'(AULA) $ https://AULA2.com'],
+'<Descritor Indisponível> $ https://somoscordel.com.br'],
 ['Identificar a tese de um texto. $ https://www.youtube.com/watch?v=QgzgrAwmJZI',
-'(AULA) $ https://AULA3.com'],
+'<Descritor Indisponível> $ https://somoscordel.com.br'],
 ['Estabelecer relação de causa e consequência entre partes do texto $ https://www.youtube.com/watch?v=u3pbYzIJvCY.',
-'(AULA) $ https://AULA4.com']
+'<Descritor Indisponível> $ https://somoscordel.com.br']
 ],
 'relação entre recursos expressivos e efeitos de sentido':
 [
 ['Identificar efeitos de sentido decorrente do uso de pontuação e outras notações. $ https://www.youtube.com/watch?v=7hzDytthua4',
 'Identificar efeitos de sentido decorrente do uso de pontuação e outras notações. $ https://www.youtube.com/watch?v=7hzDytthua4'],
-['(AULA) $ https://AULA2.com',
+['<Descritor Indisponível> $ https://somoscordel.com.br',
 'Reconhecer o efeito de sentido decorrente do emprego de recursos estilísticos e morfossintáticos. $ https://www.youtube.com/watch?v=gafUCYsVs1w']
 ]
 } 
