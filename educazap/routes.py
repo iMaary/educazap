@@ -6,26 +6,27 @@ from twilio.twiml.messaging_response import MessagingResponse
 from msgs_treatment import separate_messages
 from global_variables import *
 
+
 @app.route('/bot', methods=['POST'])
 def bot():
     resp = MessagingResponse()
     msg = resp.message()
-    flow = separate_messages('C:/Users/Aluno/cordel-bot/whatsapp-bot/educazap/messages.csv')
+    flow = separate_messages('educazap/messages.csv')
     incoming_msg = request.values.get('Body', '').lower()
     module_name = ''
     text = ''
     temp_count = 0
     current_module = None
     size_module = None
-  
-    
+
     if "dl capítulo 1" in incoming_msg or "dl capitulo 1" in incoming_msg or consult_lunari_verify():
         # reset modules data
         set_item(0)
         set_fase(0)
         set_count(0)
 
-        if consult_lunari_count() == 0: invert_lunari_verify()
+        if consult_lunari_count() == 0:
+            invert_lunari_verify()
         plus_lunari_count_img(1)
         if consult_lunari_count() == 1:
             msg.media("https://raw.githubusercontent.com/iMaary/educazap/chatbot-twilio/educazap/static/DANGEONS_LUNARI/DL2.png?token=AKZWNKRRE3LJ6CTBG3XYKU3BNXWX4")
@@ -35,13 +36,15 @@ def bot():
             msg.body("Agora, você está preparado?")
         elif consult_lunari_count() == 3:
             msg.media("https://raw.githubusercontent.com/iMaary/educazap/chatbot-twilio/educazap/static/DANGEONS_LUNARI/DL3.png?token=AKZWNKTJUROMGZBWISYMEDDBNXW6E")
-            msg.body("Antes veja mais algumas informações interessantes!\n*Dê um _OK_ quando estiver concluído :)*")
+            msg.body(
+                "Antes veja mais algumas informações interessantes!\n*Dê um _OK_ quando estiver concluído :)*")
         elif consult_lunari_count() == 4:
             msg.body("Chegou a hora de informar a matéria que você deseja!")
         elif consult_lunari_count() == 5:
             if not("matematica" in incoming_msg or "portugues" in incoming_msg or "matemática" in incoming_msg or "português" in incoming_msg):
                 plus_lunari_count_img(-1)
-                msg.body("Desculpe, não entendi!\n\n*OBS.:* essa resposta pode não estar de acordo com o solicitado...")
+                msg.body(
+                    "Desculpe, não entendi!\n\n*OBS.:* essa resposta pode não estar de acordo com o solicitado...")
                 return str(resp)
             define_lunari_subject(incoming_msg)
             msg.body("Em que ano você está mesmo?")
@@ -52,18 +55,20 @@ def bot():
                 level = 1
             else:
                 plus_lunari_count_img(-1)
-                msg.body("Desculpe, não entendi!\n\n*OBS.:* essa resposta pode não estar de acordo com o solicitado...")
+                msg.body(
+                    "Desculpe, não entendi!\n\n*OBS.:* essa resposta pode não estar de acordo com o solicitado...")
                 return str(resp)
 
             if "matemática" in consult_lunari_subject() or "matemática" in consult_lunari_subject():
-                msg.body(f'A aventura vai começar! Preparado(a)? 🥌 🚀 🎮\nEntre no link: {dangeons_lunari["matematica"][level]}! Que os jogos conhecem 🥅')
+                msg.body(
+                    f'A aventura vai começar! Preparado(a)? 🥌 🚀 🎮\nEntre no link: {dangeons_lunari["matematica"][level]}! Que os jogos conhecem 🥅')
             elif "portugues" in consult_lunari_subject() or "português" in consult_lunari_subject():
-                msg.body(f'A aventura vai começar! Preparado(a)? 🥌 🚀 🎮\nEntre no link: {dangeons_lunari["portugues"][level]}! Que os jogos conhecem 🥅')
+                msg.body(
+                    f'A aventura vai começar! Preparado(a)? 🥌 🚀 🎮\nEntre no link: {dangeons_lunari["portugues"][level]}! Que os jogos conhecem 🥅')
 
             invert_lunari_verify()
             plus_lunari_count_img(-6)
             define_lunari_subject('')
- 
 
     elif "desafio na aula" in incoming_msg or consult_menu():
         # reset modules data
@@ -71,7 +76,7 @@ def bot():
         set_fase(0)
         set_count(0)
 
-        #implements
+        # implements
         invert_menu()
         if consult_menu():
             text_menu = '''
@@ -80,7 +85,7 @@ def bot():
                             \n5 - Coesão e Coerência\n6 - Compreensão do texto\n7 - Práticas de leitura\n8 - Relações entre textos\n9 - Variação Linguística          
                         '''
             msg.body(text_menu)
-        else: 
+        else:
             current_challenge_name = ''
             if "geometria" in incoming_msg:
                 msg.media(class_challenge["geometria"])
@@ -92,7 +97,8 @@ def bot():
                 msg.media(class_challenge["compreensao do texto"])
                 current_challenge_name = 'Compreensão do texto'
             elif "probabilidade" in incoming_msg or "combinatoria" in incoming_msg or "estatistica" in incoming_msg:
-                msg.media(class_challenge["estatistica, probabilidade e combinatoria"])
+                msg.media(
+                    class_challenge["estatistica, probabilidade e combinatoria"])
                 current_challenge_name = 'Estatística, probabilidade e combinatória'
             elif "grandezas e medidas" in incoming_msg:
                 msg.media(class_challenge["grandezas e medidas"])
@@ -110,8 +116,7 @@ def bot():
                 msg.body("algo de errado não está certo!")
             if current_challenge_name:
                 msg.body(f'Digite *"Concluído"* após finalizar a atividade!')
-            
- 
+
     elif "*" in flow[get_count()][0]:
         if get_subject() == 'matematica':
             current_module = math_modules
@@ -128,7 +133,7 @@ def bot():
             for i in current_module:
                 module_name = i
                 temp_count += 1
-                if temp_count > get_item():  
+                if temp_count > get_item():
                     break
             size_module = length_portuguese_module(module_name)
             text = get_portuguese_module(module_name, get_fase(), get_level())
@@ -146,7 +151,7 @@ def bot():
 
         # put here the files implements when it's done...
         if "|" in text:
-            try: 
+            try:
                 msg.media(text.replace("|", "").strip())
             except:
                 msg.body(text)
@@ -166,7 +171,7 @@ def bot():
             set_count(0)
 
     elif get_count() < len(flow[get_count()]):
-    
+
         for i in range(len(flow[get_count()])):
             text += flow[get_count()][i] + " \n\n"
 
@@ -184,15 +189,15 @@ def bot():
                 text = 'Dê um *ok*, para confirmar a disciplina de Matemática!'
             elif 'portugues' in incoming_msg or 'português' in incoming_msg:
                 set_subject('portugues')
-                plus_count(1) 
+                plus_count(1)
                 text = 'Dê um *ok*, para confirmar a disciplina de Português!'
-            else: 
-                text = '\n\nDesculpe, não entendi sua resposta. Por favor, tente novamente\n\n' 
-        else: 
-            plus_count(1) 
-        
-        msg.body(text)    
-    else:  
+            else:
+                text = '\n\nDesculpe, não entendi sua resposta. Por favor, tente novamente\n\n'
+        else:
+            plus_count(1)
+
+        msg.body(text)
+    else:
         set_count(0)
 
     return str(resp)
