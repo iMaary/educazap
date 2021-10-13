@@ -20,6 +20,11 @@ def bot():
   
     
     if "dl capítulo 1" in incoming_msg or "dl capitulo 1" in incoming_msg or consult_lunari_verify():
+        # reset modules data
+        set_item(0)
+        set_fase(0)
+        set_count(0)
+
         if consult_lunari_count() == 0: invert_lunari_verify()
         plus_lunari_count_img(1)
         if consult_lunari_count() == 1:
@@ -42,9 +47,9 @@ def bot():
             msg.body("Em que ano você está mesmo?")
         else:
             if "9º ano" in incoming_msg or "9" in incoming_msg:
-                level = 1
+                level = 0
             elif "3º ano" in incoming_msg or "3" in incoming_msg:
-                level = 2
+                level = 1
             else:
                 plus_lunari_count_img(-1)
                 msg.body("Desculpe, não entendi!\n\n*OBS.:* essa resposta pode não estar de acordo com o solicitado...")
@@ -58,9 +63,14 @@ def bot():
             invert_lunari_verify()
             plus_lunari_count_img(-6)
             define_lunari_subject('')
-
+ 
 
     elif "desafio na aula" in incoming_msg or consult_menu():
+        # reset modules data
+        set_item(0)
+        set_fase(0)
+        set_count(0)
+
         #implements
         invert_menu()
         if consult_menu():
@@ -70,7 +80,7 @@ def bot():
                             \n5 - Coesão e Coerência\n6 - Compreensão do texto\n7 - Práticas de leitura\n8 - Relações entre textos\n9 - Variação Linguística          
                         '''
             msg.body(text_menu)
-        else:
+        else: 
             current_challenge_name = ''
             if "geometria" in incoming_msg:
                 msg.media(class_challenge["geometria"])
@@ -85,7 +95,7 @@ def bot():
                 msg.media(class_challenge["estatistica, probabilidade e combinatoria"])
                 current_challenge_name = 'Estatística, probabilidade e combinatória'
             elif "grandezas e medidas" in incoming_msg:
-                msg.media(class_challenge["gradezas e medidas"])
+                msg.media(class_challenge["grandezas e medidas"])
                 current_challenge_name = 'Grandezas e Medidas'
             elif "algebra e funções" in incoming_msg or "algebra e funcoes" in incoming_msg:
                 msg.media(class_challenge["numeros, algebra e funcoes"])
@@ -101,7 +111,7 @@ def bot():
             if current_challenge_name:
                 msg.body(f'Digite *"Concluído"* após finalizar a atividade!')
             
-
+ 
     elif "*" in flow[get_count()][0]:
         if get_subject() == 'matematica':
             current_module = math_modules
@@ -118,7 +128,7 @@ def bot():
             for i in current_module:
                 module_name = i
                 temp_count += 1
-                if temp_count > get_item():
+                if temp_count > get_item():  
                     break
             size_module = length_portuguese_module(module_name)
             text = get_portuguese_module(module_name, get_fase(), get_level())
@@ -128,6 +138,7 @@ def bot():
         class_link = complete_text[1]
         text = complete_text[0]
         text = text.replace('.', '')
+        # print(f'class_link: {class_link} | text: {text}')
         text = f'''Módulo {get_item()+1}: {module_name.upper()} - AULA {get_fase()+1}/{size_module} 📐🚀                                                                    
                         \nÓtimo, nessa aula você vai descobrir como _*"{text}"*_, assista sua aula em: {class_link}
                         \nQuando concluir a aula, mande um *OK*                                                               
@@ -139,7 +150,6 @@ def bot():
                 msg.media(text.replace("|", "").strip())
             except:
                 msg.body(text)
-
         else:
             msg.body(text)
 
@@ -153,6 +163,7 @@ def bot():
         else:
             set_item(0)
             set_fase(0)
+            set_count(0)
 
     elif get_count() < len(flow[get_count()]):
     

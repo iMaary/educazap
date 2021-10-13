@@ -121,42 +121,42 @@ portuguese_modules = {
 ['Localizar informação explícita em um texto. $ https://www.youtube.com/watch?v=PUzoSsOYVoM',
 'Inferir o sentido de uma palavra ou expressão. $ https://www.youtube.com/watch?v=m-Mr8sM5RwU'],
 ['Distinguir fato de opinião relativa a fato. $ https://www.youtube.com/watch?v=fdHA2rhDasU',
-'(AULA 3) $ https://AULA3']
+'(AULA) $ https://AULA3.com']
 ],
 'Implicações do suporte, do gênero e/ou do enunciador na compreensão do texto':
 [
-['(AULA 1) $ https://AULA1',
-'(AULA 1) $ https://AULA1'],
-['(AULA 2) $ https://AULA2',
-'(AULA 2) $ https://AULA2'],
-['(AULA 3) $ https://AULA3',
-'(AULA 3) $ https://AULA3']
+['(AULA) $ https://AULA1.com',
+'(AULA) $ https://AULA1.com'],
+['(AULA) $ https://AULA2.com',
+'(AULA) $ https://AULA2.com'],
+['(AULA) $ https://AULA3.com',
+'(AULA) $ https://AULA3.com']
 ],
 'relações entre textos':
 [
 ['Reconhecer semelhanças e/ou diferenças de ideias e opiniões na comparação entre textos que tratem da mesma temática. $ https://www.youtube.com/watch?v=RxMfvyONZfg',
-'(AULA 1) $ https://AULA3'],
-['(AULA 2) $ https://AULA2',
-'(AULA 2) $ https://AULA2'],
-['(AULA 3) $ https://AULA3',
-'(AULA 3) $ https://AULA3']
+'(AULA) $ https://AULA1.com'],
+['(AULA) $ https://AULA2.com',
+'(AULA) $ https://AULA2.com'],
+['(AULA) $ https://AULA3.com',
+'(AULA) $ https://AULA3.com']
 ],
 'coesão e coerência':
 [
 ['Reconhecer as relações entre partes de um texto, identificando os recursos coesivos que contribuem para sua continuidade. $ https://www.youtube.com/watch?v=O6L1a0LRVm0',
 'Diferenciar as partes principais das secundárias em um texto. $ https://www.youtube.com/watch?v=rUFthCR7NY4'],
 ['Diferenciar as partes principais das secundárias em um texto. $ https://www.youtube.com/watch?v=rUFthCR7NY4',
-'(AULA 2) $ https://AULA2'],
+'(AULA) $ https://AULA2.com'],
 ['Identificar a tese de um texto. $ https://www.youtube.com/watch?v=QgzgrAwmJZI',
-'(AULA 3) $ https://AULA3'],
+'(AULA) $ https://AULA3.com'],
 ['Estabelecer relação de causa e consequência entre partes do texto $ https://www.youtube.com/watch?v=u3pbYzIJvCY.',
-'(AULA 4) $ https://AULA4']
+'(AULA) $ https://AULA4.com']
 ],
 'relação entre recursos expressivos e efeitos de sentido':
 [
 ['Identificar efeitos de sentido decorrente do uso de pontuação e outras notações. $ https://www.youtube.com/watch?v=7hzDytthua4',
 'Identificar efeitos de sentido decorrente do uso de pontuação e outras notações. $ https://www.youtube.com/watch?v=7hzDytthua4'],
-['(AULA 2) $ https://AULA2',
+['(AULA) $ https://AULA2.com',
 'Reconhecer o efeito de sentido decorrente do emprego de recursos estilísticos e morfossintáticos. $ https://www.youtube.com/watch?v=gafUCYsVs1w']
 ]
 } 
@@ -170,25 +170,25 @@ def length_portuguese_module(value : str):
 
 class_challenge = {
 "coesao e coerencia":
-"https://raw.githubusercontent.com/iMaary/educazap/chatbot-twilio/educazap/static/Coes%C3%A3o%20e%20Coer%C3%AAncia.png?token=AKZWNKQPNUDJSVI6Z5GZEPDBNGQZ6",
+"https://raw.githubusercontent.com/iMaary/educazap/main/educazap/static/DESAFIO_NA_AULA/Coes%C3%A3o%20e%20Coer%C3%AAncia.png?token=AKZWNKR44YB2CWN46PSG7A3BN6BKI",
 "compreensao do texto":
-"https://raw.githubusercontent.com/iMaary/educazap/chatbot-twilio/educazap/static/Compreens%C3%A3o%20do%20texto.png?token=AKZWNKRBWM4GL6J4K4CUAJDBNGQ4K",
+"https://raw.githubusercontent.com/iMaary/educazap/main/educazap/static/DESAFIO_NA_AULA/Compreens%C3%A3o%20do%20texto.png?token=AKZWNKXFLQ3BNURS5AWJZA3BN6BLS",
 "estatistica, probabilidade e combinatoria":
-"https://raw.githubusercontent.com/iMaary/educazap/chatbot-twilio/educazap/static/Estat%C3%ADstica%2C%20probabilidade%20e%20combinat%C3%B3ria.png?token=AKZWNKTCL3ITJXHX4AGVMATBNGRAU",
+"https://raw.githubusercontent.com/iMaary/educazap/main/educazap/static/DESAFIO_NA_AULA/Estat%C3%ADstica%2C%20probabilidade%20e%20combinat%C3%B3ria.png?token=AKZWNKUSNAOPVVCVUAGFN6DBN6BMO",
 "grandezas e medidas":
-"https://raw.githubusercontent.com/iMaary/educazap/chatbot-twilio/educazap/static/Grandezas%20e%20Medidas%20EF.png?token=AKZWNKSQ2GRBHJAD6ZG4QTLBNGRFI",
+"https://raw.githubusercontent.com/iMaary/educazap/main/educazap/static/DESAFIO_NA_AULA/Grandezas%20e%20Medidas%20EF.png?token=AKZWNKURFK6FTOOPDTWOUOLBN6BOC",
 "numeros, algebra e funcoes":
-"https://raw.githubusercontent.com/iMaary/educazap/chatbot-twilio/educazap/static/N%C3%BAmeros%2C%20%C3%A1lgebra%20e%20fun%C3%A7%C3%B5es.png?token=AKZWNKTHIXX6DLMM7UBJJXLBNGRHU",
+"https://raw.githubusercontent.com/iMaary/educazap/main/educazap/static/DESAFIO_NA_AULA/N%C3%BAmeros%2C%20%C3%A1lgebra%20e%20fun%C3%A7%C3%B5es.png?token=AKZWNKWUFOORI67E27RMXV3BN6BUO",
 "praticas de leitura":
-"https://raw.githubusercontent.com/iMaary/educazap/chatbot-twilio/educazap/static/Pr%C3%A1ticas%20de%20leitura.png?token=AKZWNKUIZVLKMBHBEMS6TETBNGRNU",
+"https://raw.githubusercontent.com/iMaary/educazap/main/educazap/static/DESAFIO_NA_AULA/Pr%C3%A1ticas%20de%20leitura.png?token=AKZWNKUK7URDZPK5KFUT6ELBN6BVK",
 "relacoes entre textos":
-"https://raw.githubusercontent.com/iMaary/educazap/chatbot-twilio/educazap/static/Rela%C3%B5es%20emtre%20textos%20do%20texto.png?token=AKZWNKUA4A5ST6XBMGDMP5TBNGRRE",
+"https://raw.githubusercontent.com/iMaary/educazap/main/educazap/static/DESAFIO_NA_AULA/Rela%C3%B5es%20emtre%20textos%20do%20texto.png?token=AKZWNKVZI7LYJ5ZZN24PL2DBN6BXM",
 "variacao linguistica":
-"https://raw.githubusercontent.com/iMaary/educazap/chatbot-twilio/educazap/static/Varia%C3%A7%C3%A3o%20Lingu%C3%ADstica.png?token=AKZWNKX2KFOXYIY2C65UVS3BNGRYE",
+"https://raw.githubusercontent.com/iMaary/educazap/main/educazap/static/DESAFIO_NA_AULA/Varia%C3%A7%C3%A3o%20Lingu%C3%ADstica.png?token=AKZWNKSIEEDETFKCIQU477TBN6BX6",
 "geometria":
-"https://raw.githubusercontent.com/iMaary/educazap/chatbot-twilio/educazap/static/_Geometria%20EF.png?token=AKZWNKRP5GXCMPI77X3IRA3BNGR26"
+"https://raw.githubusercontent.com/iMaary/educazap/main/educazap/static/DESAFIO_NA_AULA/_Geometria%20EF.png?token=AKZWNKU5P6JG3WZ7GMSC2I3BN6BYW"
 }
-
+ 
 global menu_class_challenge
 menu_class_challenge = False
 
