@@ -16,7 +16,7 @@ def index():
 def bot():
     resp = MessagingResponse()
     msg = resp.message()
-    flow = separate_messages('educazap/messages.csv')
+    flow = separate_messages('messages.csv')
     incoming_msg = request.values.get('Body', '').lower()
     module_name = ''
     text = ''
