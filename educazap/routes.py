@@ -1,5 +1,5 @@
 from os import link
-from bot import app
+from app import app
 from flask import request
 import requests
 from twilio.twiml.messaging_response import MessagingResponse
