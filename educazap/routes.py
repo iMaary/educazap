@@ -7,6 +7,11 @@ from msgs_treatment import separate_messages
 from global_variables import *
 
 
+@app.route('/')
+def index():
+    return "Hello, World!"
+
+
 @app.route('/bot', methods=['POST'])
 def bot():
     resp = MessagingResponse()
