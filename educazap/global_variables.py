@@ -106,12 +106,6 @@ math_modules = {
 ]
 }
 
-def get_math_module(value : str, i, j):
-    return math_modules[value][i][j]
-
-def length_math_module(value : str): 
-    return len(math_modules[value])
-
 global portuguese_modules
 portuguese_modules = {
 'práticas de leitura':
@@ -161,11 +155,33 @@ portuguese_modules = {
 ]
 } 
 
+def get_math_module(value : str, i, j):
+    return math_modules[value][i][j]
+
+def length_math_module(value : str): 
+    return len(math_modules[value])
+
 def get_portuguese_module(value : str, i, j):
     return portuguese_modules[value][i][j]
 
 def length_portuguese_module(value : str): 
     return len(portuguese_modules[value])
+
+
+def print_text_module(module_num, materia, key : str, i, j, new_code, verify):
+
+    if 'portugues' in materia:    
+        texts = get_portuguese_module(key, i, j).split('$')
+        length = length_portuguese_module(key)
+    else:
+        texts = get_math_module(key, i, j).split('$')
+        length = length_math_module(key)
+    
+    text = f'''Módulo {module_num}: {key.upper()} - AULA 1/{length if (verify == 0) else verify} 📐🚀                                                                    
+                            \nÓtimo, nessa aula você vai descobrir como _*"{texts[0]}"*_, assista sua aula em: {texts[1]}
+                            \nQuando concluir a aula, mande um *{new_code}*                                                               
+                            \nNão esqueça de:\n- Fazer exercícios.\n- Estudar os conteúdos.'''
+    return text
 
 
 class_challenge = {
