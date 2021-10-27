@@ -177,7 +177,7 @@ def print_text_module(module_num, materia, key : str, i, j, new_code, verify):
         texts = get_math_module(key, i, j).split('$')
         length = length_math_module(key)
     
-    text = f'''Módulo {module_num}: {key.upper()} - AULA 1/{length if (verify == 0) else verify} 📐🚀                                                                    
+    text = f'''Módulo {module_num}: {key.upper()} - AULA {i+1}/{length if (verify == 0) else verify} 📐🚀                                                                    
                             \nÓtimo, nessa aula você vai descobrir como _*"{texts[0]}"*_, assista sua aula em: {texts[1]}
                             \nQuando concluir a aula, mande um *{new_code}*                                                               
                             \nNão esqueça de:\n- Fazer exercícios.\n- Estudar os conteúdos.'''

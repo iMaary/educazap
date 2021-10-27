@@ -1,11 +1,7 @@
-from _typeshed import FileDescriptorLike
-from os import link
-from re import I
 from app import app
 from flask import request
-import requests
 from twilio.twiml.messaging_response import MessagingResponse
-from educazap.global_variables import get_math_module, length_math_module, print_text_module
+from global_variables import get_math_module, length_math_module, print_text_module
 # from msgs_treatment import separate_messages
 from global_variables import *
 
@@ -23,92 +19,92 @@ def bot():
 
     if "menu" in incoming_msg or "oi" in incoming_msg:
         msg.body('Olá! Bem vindo ao EducaZap, um espaço desenvolvido pela Cordel junto com a GRE Metro Sul para te ajudar no estudo através do WhatsApp. Vamos iniciar a aventura? 🤓\n Me fala, qual seu ano no colégio?\n 1️⃣ - 9° ano, Ensino Fundamental.\n 2️⃣ - 3° ano, Ensino Médio.')
-    elif '1' in incoming_msg or '9 ano' in incoming_msg or '9' in incoming_msg or '9º ano' in incoming_msg:        
+    elif "1" == incoming_msg or '9 ano' in incoming_msg or '9' == incoming_msg or '9º ano' in incoming_msg:        
         msg.body('## O código para o 9º ano é 1! ##\n Junte a inicial da matéria desejada + o código do seu ano para proseguir:\n Ok, vamos nessa!\n 💡 Por qual disciplina você deseja iniciar?\n 🧮 M1 - Matematica\n 📖 P2 - Português')
-    elif '2' in incoming_msg or '3 ano' in incoming_msg or '3' in incoming_msg or '3º ano' in incoming_msg:  
+    elif "2" == incoming_msg or '3 ano' in incoming_msg or '3' == incoming_msg or '3º ano' in incoming_msg:  
         msg.body('*## O código para o 3º ano é 2! ##*\n Junte a inicial da matéria desejada + o código do seu ano para proseguir:\n Ok, vamos nessa!\n 💡 Por qual disciplina você deseja iniciar?\n 🧮 M2 - Matematica\n 📖 P2 - Português')
-    elif "M1" in incoming_msg:
+    elif "m1" == incoming_msg:
         msg.body(print_text_module(1, 'matematica', 'geometria', 0, 0, 'M12', 0))
-    elif "M12" in incoming_msg:
+    elif "m12" == incoming_msg:
         msg.body(print_text_module(1, 'matematica', 'geometria', 1, 0, 'M13', 0))
-    elif "M13" in incoming_msg:
+    elif "m13" == incoming_msg:
         msg.body(print_text_module(1, 'matematica', 'geometria', 2, 0, 'M14', 0))
-    elif "M14" in incoming_msg:
+    elif "m14" == incoming_msg:
         msg.body(print_text_module(2, 'matematica', 'grandezas e medidas', 0, 0, 'M15', 0))
-    elif "M15" in incoming_msg:
+    elif "m15" == incoming_msg:
         msg.body(print_text_module(2, 'matematica', 'grandezas e medidas', 1, 0, 'M16', 0))
-    elif "M16" in incoming_msg:
+    elif "m16" == incoming_msg:
         msg.body(print_text_module(2, 'matematica', 'grandezas e medidas', 2, 0, 'M17', 0))
-    elif "M17" in incoming_msg:
+    elif "m17" == incoming_msg:
         msg.body(print_text_module(3, 'matematica', 'números e operações, álgebra e funções', 0, 0, 'M18', 0))
-    elif "M18" in incoming_msg:
+    elif "m18" == incoming_msg:
             msg.body(print_text_module(3, 'matematica', 'números e operações, álgebra e funções', 1, 0, 'M19', 0))
-    elif "M19" in incoming_msg:
+    elif "m19" == incoming_msg:
         msg.body(print_text_module(3, 'matematica', 'números e operações, álgebra e funções', 2, 0, 'M111', 0))
-    elif "M111" in incoming_msg:
+    elif "m111" == incoming_msg:
         msg.body(print_text_module(3, 'matematica', 'números e operações, álgebra e funções', 3, 0, 'M112', 0))
-    elif "M112" in incoming_msg:
+    elif "m112" == incoming_msg:
         msg.body(print_text_module(4, 'matematica', 'estatística, probabilidade e combinatória', 1, 0, 'M113', 0))
-    elif "M113" in incoming_msg:
+    elif "m113" == incoming_msg:
         msg.body(print_text_module(4, 'matematica', 'estatística, probabilidade e combinatória', 2, 0, 'MENU', 0))
-    elif "M2" in incoming_msg:
+    elif "m2" == incoming_msg:
         msg.body(print_text_module(1, 'matematica', 'geometria', 0, 1, 'M22', 0))    
-    elif "M22" in incoming_msg:
+    elif "m22" == incoming_msg:
         msg.body(print_text_module(1, 'matematica', 'geometria', 1, 1, 'M23', 0))
-    elif "M23" in incoming_msg:
+    elif "m23" == incoming_msg:
         msg.body(print_text_module(1, 'matematica', 'geometria', 2, 1, 'M24', 0))
-    elif "M24" in incoming_msg:
+    elif "m24" == incoming_msg:
         msg.body(print_text_module(2, 'matematica', 'grandezas e medidas', 0, 1, 'M25', 0))
-    elif "M25" in incoming_msg:
+    elif "m25" == incoming_msg:
         msg.body(print_text_module(2, 'matematica', 'grandezas e medidas', 1, 1, 'M26', 0))
-    elif "M26" in incoming_msg:
+    elif "m26" == incoming_msg:
         msg.body(print_text_module(2, 'matematica', 'grandezas e medidas', 2, 1, 'M27', 0))
-    elif "M27" in incoming_msg:
+    elif "m27" == incoming_msg:
         msg.body(print_text_module(3, 'matematica', 'números e operações, álgebra e funções', 0, 1, 'M28', 0))
-    elif "M28" in incoming_msg:
+    elif "m28" == incoming_msg:
             msg.body(print_text_module(3, 'matematica', 'números e operações, álgebra e funções', 1, 1, 'M29', 0))
-    elif "M29" in incoming_msg:
+    elif "m29" == incoming_msg:
         msg.body(print_text_module(3, 'matematica', 'números e operações, álgebra e funções', 2, 1, 'M211', 0))
-    elif "M211" in incoming_msg:
+    elif "m211" == incoming_msg:
         msg.body(print_text_module(3, 'matematica', 'números e operações, álgebra e funções', 3, 1, 'M212', 0))
-    elif "M212" in incoming_msg:
+    elif "m212" == incoming_msg:
         msg.body(print_text_module(4, 'matematica', 'estatística, probabilidade e combinatória', 1, 1, 'M213', 0))
-    elif "M213" in incoming_msg:
+    elif "m213" == incoming_msg:
         msg.body(print_text_module(4, 'matematica', 'estatística, probabilidade e combinatória', 2, 1, 'MENU', 0))
 
 
-    elif "P1" in incoming_msg:
+    elif "p1" == incoming_msg:
         msg.body(print_text_module(1, 'portugues', 'práticas de leitura', 0, 0, 'P12', 0))
-    elif "P12" in incoming_msg:
+    elif "p12" == incoming_msg:
         msg.body(print_text_module(1, 'portugues', 'práticas de leitura', 1, 0, 'P13', 0))
-    elif "P13" in incoming_msg:
+    elif "p13" == incoming_msg:
         msg.body(print_text_module(1, 'portugues', 'práticas de leitura', 2, 0, 'P14', 0))
-    elif "P14" in incoming_msg:
+    elif "p14" == incoming_msg:
         msg.body(print_text_module(2, 'portugues', 'relações entre textos', 1, 0, 'P15', 1))
-    elif "P15" in incoming_msg:
+    elif "p15" == incoming_msg:
         msg.body(print_text_module(3, 'portugues', 'coesão e coerência', 0, 0, 'P16', 0))
-    elif "P16" in incoming_msg:
+    elif "p16" == incoming_msg:
         msg.body(print_text_module(3, 'portugues', 'coesão e coerência', 1, 0, 'P17', 0))
-    elif "P17" in incoming_msg:
+    elif "p17" == incoming_msg:
         msg.body(print_text_module(3, 'portugues', 'coesão e coerência', 2, 0, 'P18', 0))
-    elif "P18" in incoming_msg:
+    elif "p18" == incoming_msg:
         msg.body(print_text_module(3, 'portugues', 'coesão e coerência', 3, 0, 'P19', 0))
-    elif "P19" in incoming_msg:
+    elif "p19" == incoming_msg:
         msg.body(print_text_module(4, 'portugues', 'relação entre recursos expressivos e efeitos de sentido', 0, 0, 'MENU', 1))
    
-    elif "P2" in incoming_msg:
+    elif "p2" == incoming_msg:
         msg.body(print_text_module(1, 'portugues', 'práticas de leitura', 0, 1, 'P22', 0))
-    elif "P22" in incoming_msg:
+    elif "p22" == incoming_msg:
         msg.body(print_text_module(1, 'portugues', 'práticas de leitura', 1, 1, 'P23', 0))
-    elif "P23" in incoming_msg:
+    elif "p23" == incoming_msg:
         msg.body(print_text_module(1, 'portugues', 'práticas de leitura', 2, 0, 'P24', 0))
-    elif "P24" in incoming_msg:
+    elif "p24" == incoming_msg:
         msg.body(print_text_module(2, 'portugues', 'relações entre textos', 1, 0, 'P25', 1))
-    elif "P25" in incoming_msg:
+    elif "p25" == incoming_msg:
         msg.body(print_text_module(3, 'portugues', 'coesão e coerência', 0, 0, 'P26', 1))
-    elif "P26" in incoming_msg:
+    elif "p26" == incoming_msg:
         msg.body(print_text_module(4, 'portugues', 'relação entre recursos expressivos e efeitos de sentido', 0, 1, 'P27', 0))
-    elif "P27" in incoming_msg:
+    elif "p27" == incoming_msg:
         msg.body(print_text_module(4, 'portugues', 'relação entre recursos expressivos e efeitos de sentido', 1, 1, 'MENU', 0))
    
     elif 'desafio na aula' in incoming_msg:
@@ -118,28 +114,28 @@ def bot():
                         \nE - Coesão e Coerência\nF - Compreensão do texto\nG - Práticas de leitura\nH - Relações entre textos\nI - Variação Linguística          
                     '''
         msg.body(text_menu)
-    elif "geometria" in incoming_msg or 'a' in incoming_msg:
+    elif "geometria" in incoming_msg or 'a' == incoming_msg:
         msg.media(class_challenge["geometria"])
-        msg.body(incoming_msg.capitalize())
-    elif "coesao e coerencia" in incoming_msg or "coesão e coerência" in incoming_msg or 'e' in incoming_msg:
+        msg.body('Geometria')
+    elif "coesao e coerencia" in incoming_msg or "coesão e coerência" in incoming_msg or 'e' == incoming_msg:
         msg.media(class_challenge["coesao e coerencia"])
         msg.body('Coesão e Coerência')
-    elif "compreensao do texto" in incoming_msg or "compreesão do texto" in incoming_msg or 'f' in incoming_msg:
+    elif "compreensao do texto" in incoming_msg or "compreesão do texto" in incoming_msg or 'f' == incoming_msg:
         msg.media(class_challenge["compreensao do texto"])
         msg.body('Compreensão do texto')
-    elif "probabilidade" in incoming_msg or "combinatoria" in incoming_msg or "estatistica" in incoming_msg or 'b' in incoming_msg:
+    elif "probabilidade" in incoming_msg or "combinatoria" in incoming_msg or "estatistica" in incoming_msg or 'b' == incoming_msg:
         msg.media(class_challenge["estatistica, probabilidade e combinatoria"])
         msg.body('Estatística, probabilidade e combinatória')
-    elif "grandezas e medidas" in incoming_msg or 'c' in incoming_msg:
+    elif "grandezas e medidas" in incoming_msg or 'c' == incoming_msg:
         msg.media(class_challenge["grandezas e medidas"])
-        msg.body(incoming_msg.capitalize())
-    elif "algebra e funções" in incoming_msg or "algebra e funcoes" in incoming_msg or 'd' in incoming_msg:
+        msg.body('Grandezas e Medidas')
+    elif "algebra e funções" in incoming_msg or "algebra e funcoes" in incoming_msg or 'd' == incoming_msg:
         msg.media(class_challenge["numeros, algebra e funcoes"])
         msg.body('Algebra e Funções')
-    elif "relacoes entre textos" in incoming_msg or "relações entre textos" in incoming_msg or 'h' in incoming_msg:
+    elif "relacoes entre textos" in incoming_msg or "relações entre textos" in incoming_msg or 'h' == incoming_msg:
         msg.media(class_challenge["relacoes entre textos"])
         msg.body('Relações entre textos')
-    elif "variacao linguistica" in incoming_msg or "variação linguística" in incoming_msg or 'i' in incoming_msg:
+    elif "variacao linguistica" in incoming_msg or "variação linguística" in incoming_msg or 'i' == incoming_msg:
         msg.media(class_challenge["variacao linguistica"])
         msg.body('Variação Linguística')
 
